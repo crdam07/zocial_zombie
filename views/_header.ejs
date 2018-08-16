@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Zombie Nest</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-</head>
-<body>
-    <div id="container">
-        <div class="container">
-            <div class="navbar-header">
-                
-    </div>
-        <ul id="menu"color="black">
-            
+    <head>
+        <title>Zombie NEST of A.B.</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      </head>
+      <body>
+            <div class="navbar navbar-default navbar-static-top" role="navigation"> 
+            <div class="container">
+                <div class="navbar-header">
+                    
+                   <a class="navbar-brand" href="/">ZOMBIE NEST</a>
+               
+                <ul class="nav navbar-nav navbar-left navbar-header">
         <% if (currentZombie){ %>
-        <li>
-                <a  href="/">Zombie Nest</a>
-        </li>
-        <li>
+           <li>
             <a href="/edit">
             Hola, <%= currentZombie.name()%>
             </a>
-        </li>
+        
+           </li>
+
+           <li>
+                <a> My role: <%= currentZombie.rol()%></a>
+            </li>
         <li>
         <a href="/re-weapons">Register a weapon</a>
         </li>
@@ -33,9 +36,7 @@
         <li>
             <a href="/logout">Log Out</a>
 		</li>
-		<li>
-			<a> <%= currentZombie.rol()%></a>
-		</li>
+		
         <% } else {%>  
             <li>
                     <a  href="/">Zombie Nest</a>
@@ -54,6 +55,7 @@
         </ul>
     </div>
 </div>
+</div>  
 <div class="container">
     <% errors.forEach(function(error) { %>
         <div class="alert alert-danger" role="alert">
